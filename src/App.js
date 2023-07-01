@@ -1,4 +1,4 @@
-import { Header, Footer, Card } from "./components";
+import { Header, Footer } from "./components";
 
 import { AllRoutes } from "./routes/AllRoutes";
 import "./App.css";

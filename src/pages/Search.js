@@ -1,5 +1,28 @@
-import React from "react";
+import { useSearchParams } from "react-router-dom";
+import { Card } from "../components";
+import { useFetch } from "../hooks/useFetch";
 
-export const Search = () => {
-  return <div>Search</div>;
+export const Search = ({ apiEndPoint }) => {
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("q");
+
+  const { data: movies } = useFetch(apiEndPoint, query);
+  return (
+    <main>
+      <section>
+        <p className="text-3xl text-gray-700 p-6   dark:text-white">
+          {movies.length
+            ? `Search results for "${query}"`
+            : `No results found for "${query}" `}
+        </p>
+      </section>
+      <section className="max-w-7xl mx-auto py-4">
+        <div className="flex flex-wrap justify-start">
+          {movies.map((movie) => (
+            <Card key={movie.id} movie={movie} />
+          ))}
+        </div>
+      </section>
+    </main>
+  );
 };
