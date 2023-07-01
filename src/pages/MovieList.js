@@ -1,5 +1,9 @@
 import React from "react";
 
 export const MovieList = () => {
-  return <div>MovieList</div>;
+  return (
+    <main>
+      <div className="">TMDB Movie List</div>
+    </main>
+  );
 };
