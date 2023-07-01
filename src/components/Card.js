@@ -9,17 +9,32 @@ export const Card = ({ movie }) => {
 
   return (
     // Card
-    <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700 m-3 text-left">
-      <Link to={`/movie/${id}`}>
-        <img className="rounded-t-xl" src={image} alt={`${title} Poster`} />
-      </Link>
-      <div className="p-4">
+    <div className="max-w-sm bg-white rounded-xl border border-gray-200 shadow-md dark:bg-gray-700 dark:border-gray-700 m-3 text-left">
+      <figure class="relative max-w-sm transition-all duration-300">
         <Link to={`/movie/${id}`}>
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {title} - <span>{release_date}</span>
-          </h5>
+          <img
+            className="rounded-t-lg md:brightness-25 hover:transition-all hover:duration-300 hover:brightness-75"
+            src={image}
+            alt={`${title} Poster`}
+          />
         </Link>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400 text-justify">
+      </figure>
+
+      <div className="p-4">
+        <Link to={`/movie/${id}`} className="">
+          <h5 className="mb-3 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {title}
+          </h5>
+          <span className="text-slate-600 dark:text-slate-300">
+            Release Year: {release_date}
+          </span>
+        </Link>
+        <hr class="h-px my-6 bg-gray-700 border-0 dark:bg-gray-200" />
+        <span className="text-2xl mb-4 mx-auto text-black dark:text-white">
+          Plot:
+        </span>
+        <p className="mb-3 font-normal text-gray-800 dark:text-slate-400 text-justify">
+          <br />
           {overview}
         </p>
       </div>
