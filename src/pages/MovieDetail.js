@@ -83,8 +83,8 @@ export const MovieDetail = () => {
             alt={`${title} poster`}
           />
           {/* Quote from film */}
-          <blockquote className="text-xl italic font-semibold text-gray-900 dark:text-white my-10">
-            <BsQuote className="text-4xl my-3 text-neutral-300" />
+          <blockquote className="text-xl italic font-semibold text-gray-600 dark:text-white my-10">
+            <BsQuote className="text-4xl my-3 text-black dark:text-neutral-300" />
             <p className="ml-4">{tagline}</p>
           </blockquote>
         </div>
