@@ -100,7 +100,7 @@ export const MovieDetail = () => {
         </div>
         {/* Movie Info */}
         <div className="max-w-xs md:max-w-2xl mx-2 my-4 text-gray-700 dark:text-white">
-          <hr className="w-full h-px mx-auto my-8 bg-gray-300 border-0 rounded dark:bg-gray-700 md:hidden" />
+          <hr className="w-full h-px mx-auto my-8 bg-gray-300 border-0 rounded dark:bg-gray-700 lg:hidden" />
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 my-4 pb-3 dark:text-white">
             {title}
           </h1>

@@ -1,12 +1,12 @@
 import { useTorrent } from "../hooks";
-import { Accordion } from "./Accordion/Accordion";
+import { Accordion } from "../components";
 
 export const MovieTorrent = ({ title }) => {
   // Torrent info about the movie
   const { torrents } = useTorrent(title);
   return (
-    <>
-      <h2 class="my-6 text-2xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl dark:text-white">
+    <div>
+      <h2 className="my-6 text-2xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl dark:text-white select-none">
         Torrents
       </h2>
 
@@ -25,6 +25,6 @@ export const MovieTorrent = ({ title }) => {
             />
           );
         })}
-    </>
+    </div>
   );
 };
