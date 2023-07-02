@@ -10,7 +10,7 @@ export const Card = ({ movie }) => {
   return (
     // Card
     <div className="max-w-sm bg-white rounded-xl border border-gray-200 shadow-md dark:bg-gray-700 dark:border-gray-700 m-3 text-left">
-      <figure class="relative max-w-sm transition-all duration-300">
+      <figure className="relative max-w-sm transition-all duration-300">
         <Link to={`/movie/${id}`}>
           <img
             className="rounded-t-lg md:brightness-25 hover:transition-all hover:duration-300 hover:brightness-75"
@@ -18,7 +18,7 @@ export const Card = ({ movie }) => {
             alt={`${title} Poster`}
           />
         </Link>
-      </figure>
+    </figure>
 
       <div className="p-4">
         <Link to={`/movie/${id}`} className="">
@@ -29,7 +29,7 @@ export const Card = ({ movie }) => {
             Release Year: {release_date}
           </span>
         </Link>
-        <hr class="h-px my-6 bg-gray-700 border-0 dark:bg-gray-200" />
+        <hr className="h-px my-6 bg-gray-700 border-0 dark:bg-gray-200" />
         <span className="text-xl mb-4 mx-auto text-black dark:text-white">
           Plot:
         </span>

@@ -16,8 +16,6 @@ export const useFetch = (apiEndPoint, query = "") => {
         ? (fullURL = baseURL + apiEndPoint)
         : (fullURL = baseURL + apiEndPoint + "?query=" + query);
 
-      console.log(fullURL);
-
       fetch(fullURL, {
         method: "GET",
         headers: {
@@ -27,7 +25,6 @@ export const useFetch = (apiEndPoint, query = "") => {
       })
         .then((res) => res.json())
         .then((json) => {
-          console.log(json.results);
           setData(json.results);
         })
         .catch((err) => console.error("error:" + err));

@@ -1,14 +1,31 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { TableHead, TableRow } from "../components";
+import { MovieTorrent, TableHead, TableRow } from "../components";
 import { BsFillStarFill, BsQuote } from "react-icons/bs";
 
-import background from "../assets/images/backup.png";
-import { useTitle } from "../hooks/useTitle";
+import { useTitle } from "../hooks";
 
-export const MovieDetail = ({ docTitle }) => {
+import background from "../assets/images/backup.png";
+
+export const MovieDetail = () => {
   const params = useParams();
   const [movie, setMovie] = useState({});
+
+  useEffect(() => {
+    const url = process.env.REACT_APP_TMDB_BASE_URL + `movie/${params.id}`;
+    const options = {
+      method: "GET",
+      headers: {
+        accept: "application/json",
+        Authorization: "Bearer " + process.env.REACT_APP_API_KEY,
+      },
+    };
+
+    fetch(url, options)
+      .then((res) => res.json())
+      .then((json) => setMovie(json))
+      .catch((err) => console.error("error:" + err));
+  }, [params]);
 
   const {
     poster_path,
@@ -29,24 +46,8 @@ export const MovieDetail = ({ docTitle }) => {
     ? `https://image.tmdb.org/t/p/w500${poster_path}`
     : background;
 
-  useEffect(() => {
-    const url = process.env.REACT_APP_TMDB_BASE_URL + `movie/${params.id}`;
-    const options = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization: "Bearer " + process.env.REACT_APP_API_KEY,
-      },
-    };
-
-    fetch(url, options)
-      .then((res) => res.json())
-      .then((json) => setMovie(json))
-      .catch((err) => console.error("error:" + err));
-  }, [params]);
-
   // Set the document title
-  useTitle(`${title}`);
+  useTitle(title);
 
   // Format the currency
   function formatCurrency(number) {
@@ -138,6 +139,9 @@ export const MovieDetail = ({ docTitle }) => {
           >
             IMDB
           </a>
+          {title && (
+            <MovieTorrent title={`${title} ${release_date.slice(0, 5)}`} />
+          )}
         </div>
       </section>
     </main>
