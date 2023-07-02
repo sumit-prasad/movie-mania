@@ -13,6 +13,10 @@ module.exports = {
       colors: {
         darkbg: "#1e293b",
       },
+      fontFamily: {
+        sans: ["Figtree", "sans-serif"],
+        cursive: ["Bungee", "cursive"],
+      },
     },
   },
   plugins: [],

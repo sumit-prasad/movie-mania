@@ -4,7 +4,7 @@ import background from "../assets/images/backup.png";
 export const Card = ({ movie }) => {
   const { id, title, release_date, overview, poster_path } = movie;
   const image = poster_path
-    ? `https://image.tmdb.org/t/p/w500${poster_path}`
+    ? `https://image.tmdb.org/t/p/original${poster_path}`
     : background;
 
   return (
@@ -22,18 +22,18 @@ export const Card = ({ movie }) => {
 
       <div className="p-4">
         <Link to={`/movie/${id}`} className="">
-          <h5 className="mb-3 text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="text-4xl md:text-4xl font-bold tracking-tight mb-4 text-gray-900 dark:text-white">
             {title}
           </h5>
-          <span className="text-slate-600 dark:text-slate-300">
+          <span className="text-sm md:text-md text-slate-600 dark:text-slate-300">
             Release Year: {release_date}
           </span>
         </Link>
         <hr class="h-px my-6 bg-gray-700 border-0 dark:bg-gray-200" />
-        <span className="text-2xl mb-4 mx-auto text-black dark:text-white">
+        <span className="text-xl mb-4 mx-auto text-black dark:text-white">
           Plot:
         </span>
-        <p className="mb-3 font-normal text-gray-800 dark:text-slate-400 text-justify">
+        <p className="text-sm md:font-normal text-gray-800 dark:text-slate-400 text-justify">
           <br />
           {overview}
         </p>
