@@ -10,9 +10,7 @@ export const AllRoutes = () => {
           path=""
           element={<MovieList apiEndPoint="movie/now_playing" title="Home" />}
         />
-        <Route path="movie/:id" element={<MovieDetail />}>
-          <Route path="torrent" element={<MovieTorrent />} />
-        </Route>
+        <Route path="movie/:id" element={<MovieDetail />} />
         <Route
           path="movies/popular"
           element={<MovieList apiEndPoint="movie/popular" title="Popular" />}

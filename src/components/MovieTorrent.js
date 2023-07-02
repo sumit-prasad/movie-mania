@@ -6,6 +6,10 @@ export const MovieTorrent = ({ title }) => {
   const { torrents } = useTorrent(title);
   return (
     <>
+      <h2 class="my-6 text-2xl text-center font-extrabold leading-none tracking-tight text-gray-900 md:text-4xl dark:text-white">
+        Torrents
+      </h2>
+
       {torrents &&
         torrents.map(({ title, size, seeds, time, peers, desc }, index) => {
           return (

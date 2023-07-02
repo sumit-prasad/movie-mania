@@ -87,9 +87,20 @@ export const MovieDetail = () => {
             <BsQuote className="text-4xl my-3 text-black dark:text-neutral-300" />
             <p className="ml-4">{tagline}</p>
           </blockquote>
+          {/* IMDB Link  */}
+          <a
+            href={`https://www.imdb.com/title/${imdb_id}/`}
+            type="button"
+            rel="noreferrer"
+            target="_blank"
+            className="focus:outline-none my-5 w-full text-center text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-bold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
+          >
+            IMDB
+          </a>
         </div>
         {/* Movie Info */}
         <div className="max-w-xs md:max-w-2xl mx-2 my-4 text-gray-700 dark:text-white">
+          <hr className="w-full h-px mx-auto my-8 bg-gray-300 border-0 rounded dark:bg-gray-700 md:hidden" />
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 my-4 pb-3 dark:text-white">
             {title}
           </h1>
@@ -129,16 +140,7 @@ export const MovieDetail = () => {
             />
             <TableRow tHead="Reviews" tData={`${vote_count} reviews`} />
           </TableHead>
-
-          <a
-            href={`https://www.imdb.com/title/${imdb_id}/`}
-            type="button"
-            rel="noreferrer"
-            target="_blank"
-            className="focus:outline-none my-5 w-1/4 text-center text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-bold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
-          >
-            IMDB
-          </a>
+          <hr className="w-48 h-1 mx-auto my-10 bg-gray-300 border-0 rounded md:my-10 dark:bg-gray-700" />
           {title && (
             <MovieTorrent title={`${title} ${release_date.slice(0, 5)}`} />
           )}

@@ -92,7 +92,7 @@ export const Header = () => {
               )}
             </button>
             {/*  Search magnifier icon */}
-            {/* <button
+            <button
               onClick={() => setHidden(!hidden)}
               type="button"
               data-collapse-toggle="navbar-search"
@@ -114,7 +114,7 @@ export const Header = () => {
                 ></path>
               </svg>
               <span className="sr-only">Search</span>
-            </button> */}
+            </button>
             <div className="hidden relative md:block">
               <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
                 <svg

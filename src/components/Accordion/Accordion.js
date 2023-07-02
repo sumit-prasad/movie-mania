@@ -8,12 +8,14 @@ export const Accordion = ({ id, title, size, seeds, time, peers, desc }) => {
   };
 
   return (
-    <div className="max-w bg-gray-800 border border-gray-300 rounded-lg p-4 mb-2 ">
+    <div className="max-w bg-slate-700 border-gray-300 rounded-lg p-4 mb-2 select-none">
       <div
         className="flex items-center justify-between cursor-pointer"
         onClick={toggleAccordion}
       >
-        <h3 className="text-lg font-semibold">Torrent #{id + 1}</h3>
+        <h3 className="text-lg font-semibold text-white dark:text-neutral-200">
+          Torrent Link #{id + 1}
+        </h3>
         <svg
           className={`w-5 h-5 ${isOpen ? "transform rotate-180" : ""}`}
           fill="none"
@@ -30,26 +32,42 @@ export const Accordion = ({ id, title, size, seeds, time, peers, desc }) => {
         </svg>
       </div>
       {isOpen && (
-        <div class="mt-6 border-gray-200 dark:border-gray-300 dark:bg-gray-800">
-          <p class="mb-2 text-gray-500 dark:text-gray-400">
-            <span className="font-bold text-white">Title:</span> {title}
+        <div className="mt-6 text-white border-gray-200 dark:border-gray-300 ">
+          <p className="mb-2">
+            <span className="dark:font-bold text-black dark:text-white">
+              Title:
+            </span>{" "}
+            {title}
           </p>
-          <p class="mb-2 text-gray-500 dark:text-gray-400">
-            <span className="font-bold text-white">Size:</span> {size}
+          <p className="mb-2">
+            <span className="dark:font-bold text-black dark:text-white">
+              Size:
+            </span>{" "}
+            {size}
           </p>
-          <p class="mb-2 text-gray-500 dark:text-gray-400">
-            <span className="font-bold text-white">Seeds:</span> {seeds}
+          <p className="mb-2">
+            <span className="dark:font-bold text-black dark:text-white">
+              Seeds:
+            </span>{" "}
+            {seeds}
           </p>
-          <p class="mb-2 text-gray-500 dark:text-gray-400">
-            <span className="font-bold text-white">Peers:</span> {peers}
+          <p className="mb-2">
+            <span className="dark:font-bold text-black dark:text-white">
+              Peers:
+            </span>{" "}
+            {peers}
           </p>
-          <p class="mb-2 text-gray-500 dark:text-gray-400">
-            <span className="font-bold text-white">Uploaded:</span> {time}
+          <p className="mb-2">
+            <span className="dark:font-bold text-black dark:text-white">
+              Uploaded:
+            </span>{" "}
+            {time}
           </p>
-          <p class="text-gray-500 dark:text-gray-400">
+          <hr className="h-px my-6 bg-gray-200 border-0 dark:bg-gray-500"></hr>
+          <p className="text-gray-500 dark:text-gray-400">
             <a
               href={desc}
-              class="text-blue-600 dark:text-blue-500 hover:underline"
+              className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
               target="_blank"
               rel="noreferrer"
             >
