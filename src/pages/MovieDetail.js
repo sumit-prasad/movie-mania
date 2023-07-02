@@ -4,10 +4,11 @@ import { TableHead, TableRow } from "../components";
 import { BsFillStarFill, BsQuote } from "react-icons/bs";
 
 import background from "../assets/images/backup.png";
+import { useTitle } from "../hooks/useTitle";
 
-export const MovieDetail = () => {
+export const MovieDetail = ({ docTitle }) => {
   const params = useParams();
-  const [data, setData] = useState({});
+  const [movie, setMovie] = useState({});
 
   const {
     poster_path,
@@ -22,7 +23,7 @@ export const MovieDetail = () => {
     budget,
     revenue,
     imdb_id,
-  } = data;
+  } = movie;
 
   const image = poster_path
     ? `https://image.tmdb.org/t/p/w500${poster_path}`
@@ -40,15 +41,20 @@ export const MovieDetail = () => {
 
     fetch(url, options)
       .then((res) => res.json())
-      .then((json) => setData(json))
+      .then((json) => setMovie(json))
       .catch((err) => console.error("error:" + err));
   }, [params]);
+
+  // Set the document title
+  useTitle(`${title}`);
 
   // Format the currency
   function formatCurrency(number) {
     const SI_SYMBOL = ["", "k", "M", "B", "T"];
     // Determine the suffix to use based on the number of digits
     const suffix = SI_SYMBOL[Math.floor(Math.log10(Math.abs(number)) / 3)];
+
+    const safeSuffix = suffix !== undefined ? suffix : "";
 
     // Divide the number by the corresponding power of 1000 and append the suffix
     return (
@@ -61,7 +67,7 @@ export const MovieDetail = () => {
         }
       ) +
       " " +
-      suffix
+      safeSuffix
     );
   }
 
@@ -82,11 +88,11 @@ export const MovieDetail = () => {
           </blockquote>
         </div>
         {/* Movie Info */}
-        <div className="max-w-xs md:max-w-xl mx-2 my-4 text-gray-700 dark:text-white">
+        <div className="max-w-xs md:max-w-2xl mx-2 my-4 text-gray-700 dark:text-white">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 my-4 pb-3 dark:text-white">
             {title}
           </h1>
-          <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"></hr>
+          <hr className="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"></hr>
           {/* Movie plot */}
           <p className="mb-6 text-md md:text-lg text-slate-800 dark:text-slate-300">
             {overview}

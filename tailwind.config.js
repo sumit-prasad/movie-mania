@@ -15,7 +15,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Figtree", "sans-serif"],
-        cursive: ["Bungee", "cursive"],
+        serif: ["Cinzel", "serif"],
       },
     },
   },

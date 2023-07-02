@@ -1,16 +1,22 @@
 import { useSearchParams } from "react-router-dom";
 import { Card } from "../components";
 import { useFetch } from "../hooks/useFetch";
+import { useEffect } from "react";
+import { useTitle } from "../hooks/useTitle";
 
 export const Search = ({ apiEndPoint }) => {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("q");
 
   const { data: movies } = useFetch(apiEndPoint, query);
+
+  // Set the document title dynamically
+  useTitle(`Search results for "${query}"`);
+
   return (
     <main>
       <section>
-        <p className="text-3xl text-gray-700 p-6   dark:text-white">
+        <p className="text-3xl text-gray-700 p-6 text-center  dark:text-white">
           {movies.length
             ? `Search results for "${query}"`
             : `No results found for "${query}" `}

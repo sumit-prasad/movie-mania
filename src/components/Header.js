@@ -42,15 +42,15 @@ export const Header = () => {
 
   return (
     <header>
-      <nav className="bg-white border-gray-200 border-b-2 px-2 sm:px-4 py-2.5 dark:bg-gray-900 dark:border-b-0">
-        <div className="container flex flex-wrap justify-between items-center mx-auto">
+      <nav className="bg-white border-gray-200 border-b-2 px-4 sm:px-4 py-3 dark:bg-gray-900 dark:border-b-0">
+        <div className="flex flex-wrap justify-between items-center mx-auto">
           <Link to="/" className="flex items-center">
             <img
               src={Logo}
               className="mr-3 h-6 sm:h-9"
               alt="Movie Mania Logo"
             />
-            <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+            <span className="font-sans self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               Movie Mania
             </span>
           </Link>
