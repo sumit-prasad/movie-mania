@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export const useTorrent = (searchTerm) => {
   const baseTorrentURL = process.env.REACT_APP_TORRENT_BASE_URL;
-  const [torrents, setTorrents] = useState(null);
+  const [torrents, setTorrents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 

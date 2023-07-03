@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 main {
+  flex: 1;
   max-width: 1280px;
   margin: auto;
   min-height: 90vh;
