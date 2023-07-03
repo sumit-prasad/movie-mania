@@ -1,7 +1,8 @@
-import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { MovieTorrent, TableHead, TableRow } from "../components";
+import { useParams } from "react-router-dom";
 import { BsFillStarFill, BsQuote } from "react-icons/bs";
+
+import { MovieTorrent, TableHead, TableRow } from "../components";
 
 import { useTitle } from "../hooks";
 
@@ -74,8 +75,8 @@ export const MovieDetail = () => {
 
   return (
     <main>
-      <section className="flex justify-evenly flex-wrap py-5">
-        <div className="max-w-xs md:max-w-sm">
+      <section className="flex flex-wrap justify-center md:justify-evenly py-5">
+        <div className="max-w-sm md:max-w">
           {/* Poster */}
           <img
             className="rounded-xl border-gray-700 shadow-md dark:border-2 dark:border-gray-400"
@@ -83,7 +84,7 @@ export const MovieDetail = () => {
             alt={`${title} poster`}
           />
           {/* Quote from film */}
-          <blockquote className="text-xl italic font-semibold text-gray-600 dark:text-white my-10">
+          <blockquote className="text-xl text-center italic font-semibold text-gray-600 dark:text-white my-8">
             <BsQuote className="text-4xl my-3 text-black dark:text-neutral-300" />
             <p className="ml-4">{tagline}</p>
           </blockquote>
@@ -93,25 +94,29 @@ export const MovieDetail = () => {
             type="button"
             rel="noreferrer"
             target="_blank"
-            className="focus:outline-none my-5 w-full text-center text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-bold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
+            className="focus:outline-none my-5 w-full text-center text-black bg-yellow-300 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-bold rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:focus:ring-yellow-900"
           >
             IMDB
           </a>
         </div>
         {/* Movie Info */}
-        <div className="max-w-xs md:max-w-2xl mx-2 my-4 text-gray-700 dark:text-white">
+        <div className="max-w-sm md:max-w-2xl mx-2 my-4 text-gray-700 dark:text-white">
           <hr className="w-full h-px mx-auto my-8 bg-gray-300 border-0 rounded dark:bg-gray-700 lg:hidden" />
+          {/* Movie title */}
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 my-4 pb-3 dark:text-white">
             {title}
           </h1>
           <hr className="h-px my-4 bg-gray-200 border-0 dark:bg-gray-700"></hr>
           {/* Movie plot */}
-          <p className="mb-6 text-md md:text-lg text-slate-800 dark:text-slate-300">
+          <span className="text-2xl font-bold mx-auto text-black dark:text-white">
+            Plot:
+          </span>
+          <p className="my-6 text-md md:text-lg text-slate-800 dark:text-slate-300">
             {overview}
           </p>
           {/* Genres */}
           <span className="mr-4 font-bold">Genre:</span>
-          <div className="max-w-xl py-5 flex flex-wrap">
+          <div className="max-w-md md:max-w-xl py-5 flex flex-wrap">
             {genres &&
               genres.map((genre) => (
                 <span
@@ -141,6 +146,7 @@ export const MovieDetail = () => {
             <TableRow tHead="Reviews" tData={`${vote_count} reviews`} />
           </TableHead>
           <hr className="w-48 h-1 mx-auto my-10 bg-gray-300 border-0 rounded md:my-10 dark:bg-gray-700" />
+
           {title && (
             <MovieTorrent title={`${title} ${release_date.slice(0, 5)}`} />
           )}

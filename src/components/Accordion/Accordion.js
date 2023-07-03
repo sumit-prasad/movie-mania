@@ -8,7 +8,7 @@ export const Accordion = ({ id, title, size, seeds, time, peers, desc }) => {
   };
 
   return (
-    <div className="max-w bg-slate-700 border-gray-300 rounded-lg p-4 mb-2 select-none">
+    <div className="max-w bg-emerald-600 dark:bg-gray-700 border-gray-300 rounded-lg p-4 mb-2 select-none">
       <div
         className="flex items-center justify-between cursor-pointer"
         onClick={toggleAccordion}
@@ -64,10 +64,10 @@ export const Accordion = ({ id, title, size, seeds, time, peers, desc }) => {
             {time}
           </p>
           <hr className="h-px my-6 bg-gray-200 border-0 dark:bg-gray-500"></hr>
-          <p className="text-gray-500 dark:text-gray-400 w-full">
+          <p className="text-gray-500 dark:text-gray-400">
             <a
               href={desc}
-              className="focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-3 mr-2 my-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+              className="text-white px-5 py-3 rounded-md bg-blue-700 dark:bg-emerald-600"
               target="_blank"
               rel="noreferrer"
             >

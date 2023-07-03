@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 
 export const useTorrent = (searchTerm) => {
-  const baseTorrentURL = "http://localhost:8080/search";
+  const baseTorrentURL = process.env.REACT_APP_TORRENT_BASE_URL;
   const [torrents, setTorrents] = useState(null);
 
   useEffect(() => {
-    const fullURL = `${baseTorrentURL}/${encodeURIComponent(searchTerm)}`;
+    const fullURL = `${baseTorrentURL}/search/${encodeURIComponent(
+      searchTerm
+    )}`;
 
     fetch(fullURL)
       .then((res) => res.json())
@@ -13,7 +15,7 @@ export const useTorrent = (searchTerm) => {
       .catch((err) => console.error("error:" + err));
 
     return () => {};
-  }, [searchTerm]);
+  }, [searchTerm, baseTorrentURL]);
 
   return { torrents };
 };
