@@ -8,4 +8,8 @@ export { TableRow } from "./Table/TableRow";
 
 export { Accordion } from "./Accordion/Accordion";
 
-export { ScrollToTop } from "./ScrollToTop";
+// Utilities
+export { ErrorToast } from "./Utlity/ErrorToast";
+export { Loading } from "./Utlity/Loading";
+
+export { ScrollToTop } from "./Utlity/ScrollToTop";
