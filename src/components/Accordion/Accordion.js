@@ -71,7 +71,7 @@ export const Accordion = ({ id, title, size, seeds, time, peers, desc }) => {
               target="_blank"
               rel="noreferrer"
             >
-              Download
+              View
             </a>
           </p>
         </div>
