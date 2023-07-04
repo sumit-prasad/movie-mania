@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       brightness: {
+        10: ".1",
         25: ".25",
         175: "1.75",
       },

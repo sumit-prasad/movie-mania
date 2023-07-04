@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
-import Logo from "../assets/logo.png";
+import Logo from "../../assets/logo.png";
 
 export const Header = () => {
   // search input state
