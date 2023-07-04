@@ -1,5 +1,5 @@
-export { Header } from "./Header";
-export { Footer } from "./Footer";
+export { Header } from "./Partials/Header";
+export { Footer } from "./Partials/Footer";
 export { Card } from "./Card";
 export { MovieTorrent } from "./MovieTorrent";
 
